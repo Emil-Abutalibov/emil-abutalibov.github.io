@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veille Technologique — Emil Abutalibov</title>
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    .veille-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin-bottom: 1rem;
+      transition: border-color 0.3s;
+    }
+    .veille-card:hover { border-color: rgba(79,170,255,0.2); }
+
+    .veille-step {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--blue);
+      background: rgba(79,170,255,0.1);
+      border: 1px solid rgba(79,170,255,0.2);
+      border-radius: 6px;
+      padding: 0.28rem 0.65rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .veille-card h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    .veille-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+      line-height: 1.7;
+    }
+
+    .veille-card ul {
+      margin-left: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .veille-card li {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.45rem;
+      line-height: 1.6;
+    }
+
+    .veille-card strong { color: var(--text); }
+
+    .veille-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-bright), transparent);
+      margin: 1.2rem 0;
+    }
+
+    /* Timeline connector */
+    .veille-timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+
+    .veille-timeline-item {
+      display: flex;
+      gap: 1.5rem;
+      position: relative;
+    }
+
+    .veille-timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 16px;
+      top: 44px;
+      bottom: -1rem;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--border-bright), transparent);
+    }
+
+    .veille-timeline-item:last-child::before { display: none; }
+
+    .timeline-dot {
+      flex-shrink: 0;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--surface2);
+      border: 2px solid var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      margin-top: 0.2rem;
+      z-index: 1;
+    }
+
+    .timeline-content {
+      flex: 1;
+      padding-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+<div class="ambient"></div>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="header-brand">
+      <span class="header-name">Emil Abutalibov</span>
+      <span class="header-subtitle">BTS SIO · Option SLAM · 2ème Année</span>
+    </a>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="cv.html">CV</a>
+      <a href="projets.html">Projets</a>
+      <a href="veille.html" class="active">Veille</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="page-hero fade-in">
+    <span class="page-hero-tag">Veille Technologique</span>
+    <h1>L'IA Générative</h1>
+    <p>Suivi, curation et mise en pratique des évolutions de l'intelligence artificielle</p>
+  </div>
+
+  <!-- INTRO -->
+  <div class="veille-card fade-in">
+    <span class="veille-step">Introduction</span>
+    <h3>Qu'est-ce que la veille technologique ?</h3>
+    <p>La veille technologique est une activité qui consiste à s'informer très souvent sur les nouveautés d'un sujet technique. Ce n'est pas juste lire pour s'amuser, c'est une méthode pour rester compétitif et efficace dans son travail.</p>
+    <p>J'ai choisi l'<strong>IA Générative</strong> car c'est un domaine qui bouge tous les jours dans l'informatique. Il est important de savoir comment ces outils évoluent pour mieux programmer et protéger les données.</p>
+    <div class="veille-divider"></div>
+    <div class="proof-grid">
+      <div class="proof-card">
+        <img src="images/ia_projet.png" alt="Schéma de veille" onclick="openModal(this)">
+        <div class="proof-caption"><strong>Schéma</strong>Pourquoi j'ai choisi l'IA Générative pour mon BTS.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- METHODOLOGIE HEADER -->
+  <div class="section-header fade-in" style="margin-top: 2rem;">
+    <h2>Ma Méthodologie de Veille</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="veille-timeline">
+
+    <!-- ÉTAPE 1 -->
+    <div class="veille-timeline-item fade-in">
+      <div class="timeline-dot">🎯</div>
+      <div class="timeline-content">
+        <div class="veille-card" style="margin-bottom: 0;">
+          <span class="veille-step">Étape 1</span>
+          <h3>Le choix des thèmes précis</h3>
+          <p>Pour que ma veille soit utile, je ne regarde pas "tout" sur l'IA, car il y a trop d'informations. J'ai divisé ma recherche en trois parties :</p>
+          <ul>
+            <li><strong>Le code assisté par l'IA :</strong> Je surveille les outils comme GitHub Copilot, Claude, ChatGPT, Gemini pour voir comment ils aident à écrire du code.</li>
+            <li><strong>La sécurité informatique :</strong> Je regarde si les IA peuvent créer des virus ou si elles volent des informations privées.</li>
+            <li><strong>L'actualité générale :</strong> Je suis les grandes annonces des entreprises comme OpenAI ou Google pour connaître les nouveaux modèles.</li>
+          </ul>
+          <div class="veille-divider"></div>
+          <div class="proof-grid">
+            <div class="proof-card">
+              <img src="images/ia_sources.png" alt="Mes thèmes de recherche" onclick="openModal(this)">
+              <div class="proof-caption"><strong>Mes sujets</strong>Liste des thèmes que je surveille chaque semaine.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ÉTAPE 2 -->
+    <div class="veille-timeline-item fade-in">
+      <div class="timeline-dot">🔍</div>
+      <div class="timeline-content">
+        <div class="veille-card" style="margin-bottom: 0;">
+          <span class="veille-step">Étape 2</span>
+          <h3>La sélection des meilleures sources (Curation)</h3>
+          <p>Pour avoir des informations de qualité, j'ai choisi des sources sérieuses. C'est l'étape de la <strong>curation</strong> : on choisit ce qui est bon et on jette ce qui est inutile.</p>
+          <ul>
+            <li><strong>Réseaux Sociaux :</strong> Je suis des experts sur Twitter (X) qui partagent leurs travaux et découvertes.</li>
+            <li><strong>Blogs de développeurs :</strong> Je lis des articles écrits par des professionnels sur des sites comme Octo Talks ou Développez.com.</li>
+            <li><strong>Sites officiels :</strong> Je consulte les sites des technologies que je suis pour lire les journaux de mise à jour.</li>
+          </ul>
+          <div class="veille-divider"></div>
+          <div class="proof-grid">
+            <div class="proof-card">
+              <img src="images/mes_sources.png" alt="Mes sources de veille" onclick="openModal(this)">
+              <div class="proof-caption"><strong>Curation</strong>Liste des experts et des blogs que je suis pour ma veille.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ÉTAPE 3 -->
+    <div class="veille-timeline-item fade-in">
+      <div class="timeline-dot">⚙️</div>
+      <div class="timeline-content">
+        <div class="veille-card" style="margin-bottom: 0;">
+          <span class="veille-step">Étape 3</span>
+          <h3>L'utilisation d'outils automatiques (Agrégation)</h3>
+          <p>Pour ne pas perdre de temps, j'utilise un <strong>agrégateur de flux</strong>. C'est un logiciel qui va chercher les articles tout seul sur mes sites préférés et les rassemble au même endroit.</p>
+          <ul>
+            <li><strong>Outil utilisé :</strong> J'utilise <em>Feedly</em> pour centraliser mes lectures.</li>
+            <li><strong>Organisation :</strong> J'ai créé des dossiers pour trier les articles par thèmes automatiquement.</li>
+            <li><strong>Gain de temps :</strong> Je peux voir en un coup d'œil les 10 nouvelles informations les plus importantes du jour.</li>
+          </ul>
+          <div class="veille-divider"></div>
+          <div class="proof-grid">
+            <div class="proof-card">
+              <img src="images/mon_feedly.png" alt="Interface Feedly" onclick="openModal(this)">
+              <div class="proof-caption"><strong>Outil technique</strong>Mon interface Feedly avec mes flux RSS organisés.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ÉTAPE 4 -->
+    <div class="veille-timeline-item fade-in">
+      <div class="timeline-dot">💾</div>
+      <div class="timeline-content">
+        <div class="veille-card" style="margin-bottom: 0;">
+          <span class="veille-step">Étape 4</span>
+          <h3>Enregistrement et Partage des connaissances</h3>
+          <p>Une veille est inutile si on oublie tout le lendemain. Il faut stocker l'information et la partager avec les autres.</p>
+          <ul>
+            <li><strong>Stockage :</strong> J'utilise <em>Pocket</em> pour enregistrer les liens les plus intéressants pour les relire plus tard.</li>
+            <li><strong>Reformulation :</strong> Pour bien comprendre, j'essaie d'expliquer l'article avec mes propres phrases.</li>
+            <li><strong>Partage :</strong> Je communique mes découvertes sur Reddit pour aider la communauté informatique.</li>
+          </ul>
+          <div class="veille-divider"></div>
+          <div class="proof-grid">
+            <div class="proof-card">
+              <img src="images/partage_linkedin.png" alt="Post de veille partagé" onclick="openModal(this)">
+              <div class="proof-caption"><strong>Communication</strong>Exemple d'un article que j'ai résumé et partagé.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ÉTAPE 5 -->
+    <div class="veille-timeline-item fade-in">
+      <div class="timeline-dot">🚀</div>
+      <div class="timeline-content">
+        <div class="veille-card" style="margin-bottom: 0;">
+          <span class="veille-step">Étape 5</span>
+          <h3>Mise en pratique (Tests réels)</h3>
+          <p>La veille doit finir par une mise en pratique pour tester ce qu'on a lu. L'auto-formation est une partie importante de mon apprentissage en BTS.</p>
+          <ul>
+            <li><strong>Tests de code :</strong> J'ai utilisé des outils comme Claude pour m'aider à comprendre des algorithmes complexes.</li>
+            <li><strong>Comparaison :</strong> J'ai testé plusieurs IA pour voir laquelle écrit le meilleur code Java ou Python.</li>
+          </ul>
+          <div class="veille-divider"></div>
+          <div class="proof-grid">
+            <div class="proof-card">
+              <img src="images/test_pratique.png" alt="Test d'IA en pratique" onclick="openModal(this)">
+              <div class="proof-caption"><strong>Pratique</strong>Utilisation d'un outil découvert pendant ma veille.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end timeline -->
+
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modal" onclick="closeModal()">
+  <img class="modal-img" id="modalImg">
+  <button class="modal-close" onclick="event.stopPropagation();closeModal()">✕</button>
+</div>
+
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+  function openModal(img) { document.getElementById('modal').style.display='block'; document.getElementById('modalImg').src=img.src; document.body.style.overflow='hidden'; }
+  function closeModal() { document.getElementById('modal').style.display='none'; document.body.style.overflow=''; }
+  document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
+  window.addEventListener('scroll', () => { document.getElementById('scrollTop').classList.toggle('show', window.scrollY > 400); });
+  document.querySelectorAll('.fade-in').forEach((el, i) => {
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if(e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 60); obs.unobserve(e.target); } });
+    }, { threshold: 0.06 });
+    obs.observe(el);
+  });
+</script>
+</body>
+</html>

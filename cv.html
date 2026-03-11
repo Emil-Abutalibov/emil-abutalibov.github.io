@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV — Emil Abutalibov</title>
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    .cv-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .cv-col { display: flex; flex-direction: column; gap: 1.5rem; }
+
+    .cv-hero {
+      padding-bottom: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .cv-hero h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 2.1rem;
+      font-weight: 800;
+      margin-bottom: 0.3rem;
+    }
+    .cv-hero h2 span { color: var(--blue); }
+    .cv-hero-role { color: var(--cyan); font-weight: 500; margin-bottom: 0.4rem; }
+    .cv-meta { font-size: 0.83rem; color: var(--muted); }
+    .cv-meta a { color: var(--blue); text-decoration: none; }
+
+    .exp-item {
+      margin-bottom: 1.3rem;
+      padding-bottom: 1.3rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .exp-item:last-child { border: none; margin-bottom: 0; padding-bottom: 0; }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 0.3rem;
+    }
+    .exp-title { font-weight: 600; font-size: 0.93rem; color: #fff; }
+    .exp-date {
+      font-size: 0.75rem;
+      color: var(--gold);
+      font-weight: 600;
+      white-space: nowrap;
+      background: rgba(245,200,66,0.1);
+      border-radius: 6px;
+      padding: 0.18rem 0.5rem;
+      flex-shrink: 0;
+    }
+    .exp-body { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+    .exp-body ul { margin-left: 1rem; }
+    .exp-body li { margin-bottom: 0.2rem; }
+
+    .form-item {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      align-items: flex-start;
+    }
+    .form-year {
+      font-size: 0.78rem;
+      color: var(--blue);
+      font-weight: 700;
+      min-width: 96px;
+      padding-top: 1px;
+    }
+    .form-text { font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+    .form-text strong { color: var(--text); }
+
+    @media (max-width: 768px) {
+      .cv-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="ambient"></div>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="header-brand">
+      <span class="header-name">Emil Abutalibov</span>
+      <span class="header-subtitle">BTS SIO · Option SLAM · 2ème Année</span>
+    </a>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="cv.html" class="active">CV</a>
+      <a href="projets.html">Projets</a>
+      <a href="veille.html">Veille</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="page-hero fade-in">
+    <span class="page-hero-tag">Profil</span>
+    <h1>Curriculum Vitae</h1>
+    <p>Parcours, expériences et compétences techniques</p>
+  </div>
+
+  <div class="cv-grid">
+    <!-- COLONNE GAUCHE -->
+    <div class="cv-col">
+
+      <div class="card fade-in">
+        <div class="cv-hero">
+          <h2>Emil <span>ABUTALIBOV</span></h2>
+          <p class="cv-hero-role">Étudiant BTS SIO SLAM — 2ème Année</p>
+          <div class="cv-meta">
+            📍 4 Avenue de la Libération, 33310 Lormont &nbsp;·&nbsp;
+            📞 07 67 57 83 08<br>
+            <a href="mailto:abutalibovemil43@gmail.com">abutalibovemil@gmail.com</a>
+          </div>
+        </div>
+
+        <p class="panel-title">Expériences Professionnelles</p>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">Stage Développeur Web & IoT — Fablab Cohabit</span>
+            <span class="exp-date">2026 · 8 sem.</span>
+          </div>
+          <div class="exp-body">Développement web sur le site Amphitryon du FABLAB (compréhension, correction, complétion). Création d'une borne autonome de transfert de fichiers sur Raspberry Pi avec portail captif, serveur Python et Wi-Fi.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">Stage Développeur IoT — Fablab Cohabit</span>
+            <span class="exp-date">2025 · 5 sem.</span>
+          </div>
+          <div class="exp-body">Réalisation d'un capteur CO₂/COV avec affichage LCD. Programmation de microcontrôleurs et gestion de flux de données environnementales.</div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">Stage Informatique — Médiathèque de Gradignan</span>
+            <span class="exp-date">2024 · 5 sem.</span>
+          </div>
+          <div class="exp-body">
+            <ul>
+              <li>Réparation et maintenance de parc informatique (PC, projecteurs, écrans).</li>
+              <li>Installation d'équipements numériques et support au public.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">Stage Informatique/Électronique — Fab Lab Cohabit</span>
+            <span class="exp-date">2023 · 3 sem.</span>
+          </div>
+          <div class="exp-body">
+            <ul>
+              <li>Administration système : mise à jour Linux (Debian) et scripting réseau.</li>
+              <li>Projets Raspberry Pi 2 et conception 2D/3D (FreeCAD) pour découpe laser.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">Stage Informatique & Réseaux — CEGELEC</span>
+            <span class="exp-date">2022–2023</span>
+          </div>
+          <div class="exp-body">Câblage structuré (Baie, RJ45, fibre optique), installation de switchs et gestion d'inventaire Excel.</div>
+        </div>
+      </div>
+
+      <div class="card fade-in">
+        <p class="panel-title">Formation</p>
+        <div class="form-item"><span class="form-year">2024 – 2026</span><div class="form-text"><strong>BTS SIO option SLAM</strong><br>Lycée Gustave Eiffel — Bordeaux</div></div>
+        <div class="form-item"><span class="form-year">2022 – 2024</span><div class="form-text">Bac Pro Systèmes Numériques (SN)<br>Lycée Kastler — Talence</div></div>
+        <div class="form-item"><span class="form-year">2021 – 2022</span><div class="form-text">2nde MTNE — Famille des Métiers des Transitions Numérique et Énergétique</div></div>
+        <div class="form-item"><span class="form-year">2018 – 2021</span><div class="form-text">Collège Marcellin Berthelot</div></div>
+      </div>
+
+    </div>
+
+    <!-- COLONNE DROITE -->
+    <div class="cv-col">
+
+      <div class="card fade-in">
+        <p class="panel-title">Compétences Techniques</p>
+        <div class="skill-group">
+          <div class="skill-label">Développement</div>
+          <div class="skill-tags">
+            <span class="tag tag-blue">Java</span>
+            <span class="tag tag-blue">C#</span>
+            <span class="tag tag-blue">PHP</span>
+            <span class="tag tag-blue">Python</span>
+            <span class="tag tag-blue">SQL</span>
+            <span class="tag tag-blue">HTML / CSS</span>
+            <span class="tag tag-blue">JavaScript</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">Systèmes & Réseaux</div>
+          <div class="skill-tags">
+            <span class="tag tag-cyan">Linux Debian</span>
+            <span class="tag tag-cyan">Raspberry Pi</span>
+            <span class="tag tag-cyan">Arduino</span>
+            <span class="tag tag-cyan">Docker</span>
+            <span class="tag tag-cyan">SSH / Réseau</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-label">Outils & Méthodes</div>
+          <div class="skill-tags">
+            <span class="tag">Git / GitLab</span>
+            <span class="tag">Visual Studio</span>
+            <span class="tag">MySQL / phpMyAdmin</span>
+            <span class="tag">Postman</span>
+            <span class="tag">WeKan / Trello</span>
+            <span class="tag">Docker Compose</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fade-in">
+        <p class="panel-title">Langues</p>
+        <div class="form-item"><span class="form-year" style="color:var(--gold)">Expert</span><div class="form-text">Russe · Turc · Azéri</div></div>
+        <div class="form-item"><span class="form-year">Technique</span><div class="form-text">Anglais</div></div>
+        <div class="form-item"><span class="form-year">Intermédiaire</span><div class="form-text">Français</div></div>
+      </div>
+
+      <div class="card fade-in">
+        <p class="panel-title">Qualités Personnelles</p>
+        <div class="skill-tags" style="margin-bottom: 1rem;">
+          <span class="tag">Ponctualité</span>
+          <span class="tag">Esprit d'équipe</span>
+          <span class="tag">Polyvalence</span>
+          <span class="tag">Adaptabilité</span>
+          <span class="tag">Autonomie</span>
+        </div>
+        <p class="panel-title" style="margin-top: 0.8rem;">Centres d'intérêt</p>
+        <div class="skill-tags">
+          <span class="tag">🏋️ Musculation</span>
+          <span class="tag">🥊 Boxe</span>
+          <span class="tag">⚽ Sports</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.getElementById('scrollTop').classList.toggle('show', window.scrollY > 400);
+  });
+  document.querySelectorAll('.fade-in').forEach((el, i) => {
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 50); obs.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    obs.observe(el);
+  });
+</script>
+</body>
+</html>

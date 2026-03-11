@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Emil Abutalibov</title>
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    .hero {
+      min-height: calc(100vh - 70px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 3rem 2rem;
+      position: relative;
+    }
+
+    .hero-inner { max-width: 700px; }
+
+    .hero-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--cyan);
+      background: rgba(0,212,200,0.1);
+      border: 1px solid rgba(0,212,200,0.25);
+      border-radius: 100px;
+      padding: 0.4rem 1.1rem;
+      margin-bottom: 2rem;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -2px;
+      color: #fff;
+      margin-bottom: 1.2rem;
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(120deg, var(--blue), var(--cyan));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+
+    .hero-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      animation: fadeUp 0.6s 0.3s ease both;
+    }
+
+    .hero-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem 1.2rem;
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.3s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .hero-card:hover {
+      border-color: var(--blue);
+      background: rgba(79,170,255,0.06);
+      transform: translateY(-4px);
+    }
+
+    .hero-card-icon {
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+
+    .hero-card-label {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #fff;
+    }
+
+    .hero-card-sub {
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .hero-card-arrow {
+      color: var(--blue);
+      font-size: 1.1rem;
+      margin-top: auto;
+      transition: transform 0.25s;
+    }
+
+    .hero-card:hover .hero-card-arrow {
+      transform: translateY(3px);
+    }
+
+    .contact-strip {
+      margin-top: 2rem;
+      font-size: 0.83rem;
+      color: var(--muted);
+      animation: fadeUp 0.6s 0.4s ease both;
+    }
+
+    .contact-strip a { color: var(--blue); text-decoration: none; }
+    .contact-strip a:hover { text-decoration: underline; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    @media (max-width: 600px) {
+      .hero-cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="ambient"></div>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="header-brand">
+      <span class="header-name">Emil Abutalibov</span>
+      <span class="header-subtitle">BTS SIO · Option SLAM · 2ème Année</span>
+    </a>
+    <nav>
+      <a href="index.html" class="active">Accueil</a>
+      <a href="cv.html">CV</a>
+      <a href="projets.html">Projets</a>
+      <a href="veille.html">Veille</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <span class="hero-badge">Portfolio BTS SIO SLAM</span>
+    <h1>Emil <span>Abutalibov</span></h1>
+    <p class="hero-desc">
+      Étudiant en 2ème année de BTS SIO option SLAM au Lycée Gustave Eiffel de Bordeaux.<br>
+      Développement d'applications, systèmes embarqués, réseaux et veille technologique.
+    </p>
+
+    <div class="hero-cards">
+      <a href="cv.html" class="hero-card">
+        <div class="hero-card-icon">🧑‍💼</div>
+        <div class="hero-card-label">Curriculum Vitae</div>
+        <div class="hero-card-sub">Expériences, formation et compétences</div>
+        <div class="hero-card-arrow">↓</div>
+      </a>
+      <a href="projets.html" class="hero-card">
+        <div class="hero-card-icon">💻</div>
+        <div class="hero-card-label">Projets & Stages</div>
+        <div class="hero-card-sub">Réalisations AP 1.2 à 3.2, stages en entreprise</div>
+        <div class="hero-card-arrow">↓</div>
+      </a>
+      <a href="veille.html" class="hero-card">
+        <div class="hero-card-icon">🔭</div>
+        <div class="hero-card-label">Veille Technologique</div>
+        <div class="hero-card-sub">Suivi de l'IA Générative et de ses évolutions</div>
+        <div class="hero-card-arrow">↓</div>
+      </a>
+    </div>
+
+    <div class="contact-strip">
+      📍 Lormont &nbsp;·&nbsp;
+      📞 07 67 57 83 08 &nbsp;·&nbsp;
+      <a href="mailto:abutalibovemil@gmail.com">abutalibovemil43@gmail.com</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
