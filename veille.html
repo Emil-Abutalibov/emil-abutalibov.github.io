@@ -47,10 +47,7 @@
       line-height: 1.7;
     }
 
-    .veille-card ul {
-      margin-left: 1.2rem;
-      margin-bottom: 1rem;
-    }
+    .veille-card ul { margin-left: 1.2rem; margin-bottom: 1rem; }
 
     .veille-card li {
       font-size: 0.9rem;
@@ -67,19 +64,10 @@
       margin: 1.2rem 0;
     }
 
-    /* Timeline connector */
-    .veille-timeline {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      position: relative;
-    }
+    /* Timeline */
+    .veille-timeline { display: flex; flex-direction: column; position: relative; }
 
-    .veille-timeline-item {
-      display: flex;
-      gap: 1.5rem;
-      position: relative;
-    }
+    .veille-timeline-item { display: flex; gap: 1.5rem; position: relative; }
 
     .veille-timeline-item::before {
       content: '';
@@ -108,9 +96,126 @@
       z-index: 1;
     }
 
-    .timeline-content {
-      flex: 1;
-      padding-bottom: 2rem;
+    .timeline-content { flex: 1; padding-bottom: 2rem; }
+
+    /* Tech badges */
+    .tech-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #76c900;
+      background: rgba(118,201,0,0.1);
+      border: 1px solid rgba(118,201,0,0.25);
+      border-radius: 4px;
+      padding: 0.15rem 0.5rem;
+      margin-right: 0.3rem;
+      margin-bottom: 0.3rem;
+    }
+    .tech-badge.blue { color: var(--blue); background: rgba(79,170,255,0.1); border-color: rgba(79,170,255,0.25); }
+    .tech-badge.orange { color: #ffaa44; background: rgba(255,170,68,0.1); border-color: rgba(255,170,68,0.25); }
+
+    /* Insight box */
+    .veille-insight {
+      background: rgba(79,170,255,0.05);
+      border-left: 3px solid var(--blue);
+      border-radius: 0 8px 8px 0;
+      padding: 0.85rem 1.1rem;
+      margin: 0.75rem 0;
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .veille-insight strong { color: var(--blue); }
+
+    /* Warning box */
+    .veille-warning {
+      background: rgba(255,170,68,0.05);
+      border-left: 3px solid #ffaa44;
+      border-radius: 0 8px 8px 0;
+      padding: 0.85rem 1.1rem;
+      margin: 0.75rem 0;
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .veille-warning strong { color: #ffaa44; }
+
+    /* Q&A grid */
+    .qa-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    @media (max-width: 700px) { .qa-grid { grid-template-columns: 1fr; } }
+
+    .qa-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.1rem 1.25rem;
+      transition: border-color 0.25s;
+    }
+    .qa-card:hover { border-color: rgba(79,170,255,0.25); }
+
+    .qa-question {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 0.55rem;
+    }
+
+    .qa-answer {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .qa-answer strong { color: var(--text); }
+
+    /* Veilleurs */
+    .veilleur-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .veilleur-row:last-child { border-bottom: none; }
+
+    .veilleur-avatar {
+      flex-shrink: 0;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--surface2);
+      border: 2px solid rgba(79,170,255,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
+    .veilleur-info { flex: 1; }
+    .veilleur-name { font-size: 0.9rem; font-weight: 700; color: var(--text); margin-bottom: 0.2rem; }
+    .veilleur-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.55; }
+
+    .veilleur-tag {
+      flex-shrink: 0;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #76c900;
+      background: rgba(118,201,0,0.1);
+      border: 1px solid rgba(118,201,0,0.2);
+      border-radius: 4px;
+      padding: 0.2rem 0.5rem;
+      margin-top: 0.15rem;
     }
   </style>
 </head>
@@ -134,34 +239,137 @@
 
 <div class="container">
 
+  <!-- HERO -->
   <div class="page-hero fade-in">
     <span class="page-hero-tag">Veille Technologique</span>
-    <h1>L'IA Générative</h1>
-    <p>Suivi, curation et mise en pratique des évolutions de l'intelligence artificielle</p>
+    <h1>NVIDIA et l'IA au service du jeu vidéo</h1>
+    <p>Comment l'intelligence artificielle de NVIDIA améliore les graphismes et les performances dans les jeux vidéo</p>
   </div>
 
-  <!-- INTRO -->
-  <div class="veille-card fade-in">
-    <span class="veille-step">Introduction</span>
-    <h3>Qu'est-ce que la veille technologique ?</h3>
-    <p>La veille technologique est une activité qui consiste à s'informer très souvent sur les nouveautés d'un sujet technique. Ce n'est pas juste lire pour s'amuser, c'est une méthode pour rester compétitif et efficace dans son travail.</p>
-    <p>J'ai choisi l'<strong>IA Générative</strong> car c'est un domaine qui bouge tous les jours dans l'informatique. Il est important de savoir comment ces outils évoluent pour mieux programmer et protéger les données.</p>
-    <div class="veille-divider"></div>
-    <div class="proof-grid">
-      <div class="proof-card">
-        <img src="images/ia_projet.png" alt="Schéma de veille" onclick="openModal(this)">
-        <div class="proof-caption"><strong>Schéma</strong>Pourquoi j'ai choisi l'IA Générative pour mon BTS.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- METHODOLOGIE HEADER -->
-  <div class="section-header fade-in" style="margin-top: 2rem;">
-    <h2>Ma Méthodologie de Veille</h2>
+  <!-- ═══ PARTIE 1 ═══ -->
+  <div class="section-header fade-in">
+    <h2>1 — Qu'est-ce que la veille technologique ?</h2>
     <div class="section-line"></div>
   </div>
 
-  <!-- TIMELINE -->
+  <div class="qa-grid fade-in">
+
+    <div class="qa-card">
+      <div class="qa-question">① Définition</div>
+      <div class="qa-answer">
+        La veille technologique, c'est le fait de <strong>suivre régulièrement les nouveautés</strong> dans un domaine technique. On lit des articles, on regarde des vidéos, on teste des outils — le but est de rester à jour et de ne pas rater les nouvelles technologies importantes. Ce n'est pas juste lire des news au hasard : c'est une méthode organisée avec des sources choisies et un suivi régulier.
+      </div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-question">② Pourquoi c'est important pour une entreprise</div>
+      <div class="qa-answer">
+        Une entreprise qui fait de la veille peut <strong>utiliser les nouvelles technologies avant ses concurrents</strong>. Par exemple, un studio de jeu vidéo qui intègre le DLSS dès sa sortie offre de meilleures performances à ses joueurs. Sans veille, on risque de travailler avec des outils dépassés, de rater des opportunités, ou de faire des mauvais choix techniques dans ses projets.
+      </div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-question">③ Les enjeux dans l'informatique</div>
+      <div class="qa-answer">
+        Dans l'informatique, les choses changent très vite. Les enjeux principaux sont : <strong>rester à jour sur les outils du marché</strong> pour rester employable, <strong>choisir la bonne technologie</strong> pour chaque projet (ex. : DLSS ou FSR pour l'upscaling ?), et <strong>suivre la sécurité</strong> (des failles dans les drivers GPU peuvent causer des plantages ou des risques). Dans le domaine des GPU et du jeu vidéo, la compétition entre NVIDIA, AMD et Intel pousse les innovations très vite.
+      </div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-question">④ Qui fait de la veille dans ce domaine ?</div>
+      <div class="qa-answer">
+        Plusieurs sites et chaînes font une veille active et reconnue sur les GPU et le jeu vidéo. J'en ai identifié cinq, présentés juste en dessous, avec leur spécialité.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Veilleurs -->
+  <div class="veille-card fade-in">
+    <span class="veille-step">Veilleurs identifiés</span>
+    <h3>Sites et personnes qui font de la veille dans ce domaine</h3>
+
+    <div class="veilleur-row">
+      <div class="veilleur-avatar">📺</div>
+      <div class="veilleur-info">
+        <div class="veilleur-name">Digital Foundry</div>
+        <div class="veilleur-desc">Chaîne YouTube et site spécialisé dans les tests techniques des jeux vidéo. Ils comparent le rendu avec et sans DLSS, testent le ray tracing et analysent les performances GPU. C'est une référence mondiale pour comprendre comment les technologies graphiques fonctionnent en jeu.</div>
+      </div>
+      <div class="veilleur-tag">Vidéo / GPU</div>
+    </div>
+
+    <div class="veilleur-row">
+      <div class="veilleur-avatar">🖥️</div>
+      <div class="veilleur-info">
+        <div class="veilleur-name">Tom's Hardware</div>
+        <div class="veilleur-desc">Site anglophone qui teste toutes les nouvelles cartes graphiques (RTX 4090, 5070, 5090…), explique les nouvelles architectures et suit toutes les annonces NVIDIA. Leurs tests sont détaillés et mis à jour très souvent.</div>
+      </div>
+      <div class="veilleur-tag">Hardware</div>
+    </div>
+
+    <div class="veilleur-row">
+      <div class="veilleur-avatar">👨‍💻</div>
+      <div class="veilleur-info">
+        <div class="veilleur-name">NVIDIA Developer Blog</div>
+        <div class="veilleur-desc">Blog officiel NVIDIA pour les développeurs. Ils publient les mises à jour du DLSS, des guides pour intégrer RTX dans Unity ou Unreal Engine, et expliquent comment leurs technologies fonctionnent. C'est la source la plus fiable pour les informations techniques officielles.</div>
+      </div>
+      <div class="veilleur-tag">Officiel</div>
+    </div>
+
+    <div class="veilleur-row">
+      <div class="veilleur-avatar">🔬</div>
+      <div class="veilleur-info">
+        <div class="veilleur-name">Hardware.fr</div>
+        <div class="veilleur-desc">Site et forum en français sur le matériel informatique. Ils testent les GPU NVIDIA, comparent les technologies d'upscaling (DLSS, FSR, XeSS) et suivent les mises à jour de drivers. Utile pour avoir des avis et des tests en français.</div>
+      </div>
+      <div class="veilleur-tag">FR / Tests</div>
+    </div>
+
+    <div class="veilleur-row">
+      <div class="veilleur-avatar">🎮</div>
+      <div class="veilleur-info">
+        <div class="veilleur-name">r/nvidia &amp; r/gamedev (Reddit)</div>
+        <div class="veilleur-desc">Communautés Reddit très actives. Sur r/nvidia, les utilisateurs partagent des annonces, des problèmes et des retours sur les drivers en temps réel. Sur r/gamedev, des développeurs parlent de leur expérience avec les plugins DLSS et RTX dans leurs projets de jeux.</div>
+      </div>
+      <div class="veilleur-tag">Communauté</div>
+    </div>
+
+  </div>
+
+  <!-- ═══ PARTIE 2 — Sujet ═══ -->
+  <div class="section-header fade-in" style="margin-top: 2.5rem;">
+    <h2>2 — Mon sujet de veille</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="veille-card fade-in">
+    <span class="veille-step">Sujet choisi</span>
+    <h3>Pourquoi NVIDIA et l'IA dans le jeu vidéo ?</h3>
+    <p>
+      J'ai choisi de suivre <strong>les technologies IA de NVIDIA dans le jeu vidéo</strong>, et plus précisément le DLSS, le ray tracing et les nouvelles cartes RTX. Trois raisons m'ont poussé vers ce sujet :
+    </p>
+    <ul>
+      <li><strong>Je vis ce sujet au quotidien :</strong> J'ai une <strong>RTX 5070</strong> dans mon PC personnel. Je teste ces technologies directement chez moi, ce qui me donne une expérience concrète et pas seulement théorique.</li>
+      <li><strong>C'est utile pour le développement :</strong> Le DLSS et RTX ont des plugins pour Unity et Unreal Engine. En tant que développeur SLAM, comprendre ces outils est directement utile dans des projets de jeux ou d'applications 3D.</li>
+      <li><strong>Le sujet bouge vite :</strong> NVIDIA sort une nouvelle version de DLSS presque chaque année. Il y a toujours quelque chose de nouveau à suivre, ce qui rend la veille active et intéressante.</li>
+    </ul>
+    <div class="veille-divider"></div>
+    <p style="font-size:0.85rem; color: var(--muted);">
+      <span class="tech-badge">DLSS 3.5</span>
+      <span class="tech-badge blue">Ray Tracing</span>
+      <span class="tech-badge orange">RTX 5070 / Blackwell</span>
+      <span class="tech-badge">Frame Generation</span>
+      <span class="tech-badge blue">ACE (IA dans les PNJ)</span>
+      <span class="tech-badge orange">Reflex 2</span>
+    </p>
+  </div>
+
+  <!-- ═══ PARTIE 3 — Méthodologie ═══ -->
+  <div class="section-header fade-in" style="margin-top: 2.5rem;">
+    <h2>3 — Ma méthode de veille</h2>
+    <div class="section-line"></div>
+  </div>
+
   <div class="veille-timeline">
 
     <!-- ÉTAPE 1 -->
@@ -169,22 +377,35 @@
       <div class="timeline-dot">🎯</div>
       <div class="timeline-content">
         <div class="veille-card" style="margin-bottom: 0;">
-          <span class="veille-step">Étape 1</span>
-          <h3>Le choix des thèmes précis</h3>
-          <p>Pour que ma veille soit utile, je ne regarde pas "tout" sur l'IA, car il y a trop d'informations. J'ai divisé ma recherche en trois parties :</p>
+          <span class="veille-step">Étape 1 — Choix du sujet</span>
+          <h3>Ce que je surveille précisément</h3>
+          <p>Pour ne pas être perdu avec trop d'informations, j'ai choisi trois points précis à suivre :</p>
           <ul>
-            <li><strong>Le code assisté par l'IA :</strong> Je surveille les outils comme GitHub Copilot, Claude, ChatGPT, Gemini pour voir comment ils aident à écrire du code.</li>
-            <li><strong>La sécurité informatique :</strong> Je regarde si les IA peuvent créer des virus ou si elles volent des informations privées.</li>
-            <li><strong>L'actualité générale :</strong> Je suis les grandes annonces des entreprises comme OpenAI ou Google pour connaître les nouveaux modèles.</li>
+            <li>
+              <strong>Le DLSS (Deep Learning Super Sampling) :</strong> C'est une technologie qui utilise l'IA pour améliorer la qualité d'image dans les jeux. Le GPU calcule l'image en basse résolution, puis un réseau de neurones la reconstruit en haute qualité. Il existe plusieurs versions : DLSS 2, DLSS 3 (qui génère des images supplémentaires pour avoir plus de FPS), et DLSS 3.5 (qui améliore aussi le ray tracing avec l'IA).
+            </li>
+            <li>
+              <strong>Le ray tracing :</strong> C'est une méthode pour simuler la lumière de façon réaliste dans les jeux (ombres, reflets, éclairages). Les GPU NVIDIA RTX ont des composants dédiés pour ça. Le DLSS 3.5 améliore encore le ray tracing grâce à l'IA.
+            </li>
+            <li>
+              <strong>Les nouvelles fonctions IA dans les jeux :</strong> NVIDIA ACE permet d'avoir des personnages dans les jeux qui parlent de façon naturelle grâce à l'IA. NVIDIA Reflex 2 réduit le délai entre le clic de la souris et l'action dans le jeu, ce qui est utile dans les FPS et jeux compétitifs.
+            </li>
           </ul>
+          <div class="veille-insight">
+            <strong>Lien direct avec le développement :</strong> NVIDIA fournit des plugins DLSS pour Unity et Unreal Engine. Un développeur peut activer le DLSS dans son jeu en quelques étapes, ce qui améliore les performances pour tous les joueurs avec une carte RTX.
+          </div>
           <div class="veille-divider"></div>
           <div class="proof-grid">
             <div class="proof-card">
-              <img src="images/ia_sources.png" alt="Mes thèmes de recherche" onclick="openModal(this)">
-              <div class="proof-caption"><strong>Mes sujets</strong>Liste des thèmes que je surveille chaque semaine.</div>
+              <img src="images/axes_dlss_rtx.webp" alt="Axes de veille DLSS et RTX" onclick="openModal(this)">
+              <div class="proof-caption"><strong>Sujet</strong> Les trois points que je suis : DLSS, ray tracing et IA dans les jeux.</div>
+            </div>
+            <div class="proof-card">
+              <img src="images/RTX-ray-tracing-on-off.webp" alt="Axes de veille DLSS et RTX" onclick="openModal(this)">
+              <div class="proof-caption"><strong></strong></div>
             </div>
           </div>
-        </div>
+        </div>RTX-ray-tracing-on-off.webp
       </div>
     </div>
 
@@ -193,19 +414,25 @@
       <div class="timeline-dot">🔍</div>
       <div class="timeline-content">
         <div class="veille-card" style="margin-bottom: 0;">
-          <span class="veille-step">Étape 2</span>
-          <h3>La sélection des meilleures sources (Curation)</h3>
-          <p>Pour avoir des informations de qualité, j'ai choisi des sources sérieuses. C'est l'étape de la <strong>curation</strong> : on choisit ce qui est bon et on jette ce qui est inutile.</p>
+          <span class="veille-step">Étape 2 — Choix des sources</span>
+          <h3>Où je trouve mes informations</h3>
+          <p>
+            J'ai d'abord cherché beaucoup de sources différentes, puis j'en ai gardé seulement les meilleures pour ne pas être submergé d'informations inutiles.
+          </p>
           <ul>
-            <li><strong>Réseaux Sociaux :</strong> Je suis des experts sur Twitter (X) qui partagent leurs travaux et découvertes.</li>
-            <li><strong>Blogs de développeurs :</strong> Je lis des articles écrits par des professionnels sur des sites comme Octo Talks ou Développez.com.</li>
-            <li><strong>Sites officiels :</strong> Je consulte les sites des technologies que je suis pour lire les journaux de mise à jour.</li>
+            <li><strong>NVIDIA Developer Blog :</strong> Les annonces officielles sur le DLSS, les mises à jour du SDK et les guides pour les développeurs.</li>
+            <li><strong>Digital Foundry :</strong> Des vidéos et articles qui comparent les jeux avec et sans DLSS, avec et sans ray tracing. Très utile pour voir les différences visuelles et de performances.</li>
+            <li><strong>Tom's Hardware &amp; Hardware.fr :</strong> Des tests de cartes graphiques et des comparatifs entre les technologies d'upscaling (DLSS, FSR d'AMD, XeSS d'Intel).</li>
+            <li><strong>Reddit (r/nvidia, r/gamedev) :</strong> Les retours d'utilisateurs et de développeurs en temps réel. Très utile pour les problèmes de drivers et les expériences concrètes.</li>
           </ul>
+          <p>
+            J'ai limité mes sources actives à <strong>5 principales</strong> pour que ma veille reste rapide et efficace à consulter.
+          </p>
           <div class="veille-divider"></div>
           <div class="proof-grid">
             <div class="proof-card">
-              <img src="images/mes_sources.png" alt="Mes sources de veille" onclick="openModal(this)">
-              <div class="proof-caption"><strong>Curation</strong>Liste des experts et des blogs que je suis pour ma veille.</div>
+              <img src="images/sources_nvidia_gaming.png" alt="Sources de veille" onclick="openModal(this)">
+              <div class="proof-caption"><strong>Sources</strong> Les 5 sources principales que je consulte régulièrement.</div>
             </div>
           </div>
         </div>
@@ -217,19 +444,25 @@
       <div class="timeline-dot">⚙️</div>
       <div class="timeline-content">
         <div class="veille-card" style="margin-bottom: 0;">
-          <span class="veille-step">Étape 3</span>
-          <h3>L'utilisation d'outils automatiques (Agrégation)</h3>
-          <p>Pour ne pas perdre de temps, j'utilise un <strong>agrégateur de flux</strong>. C'est un logiciel qui va chercher les articles tout seul sur mes sites préférés et les rassemble au même endroit.</p>
+          <span class="veille-step">Étape 3 — Agrégation</span>
+          <h3>Comment je regroupe les informations automatiquement</h3>
+          <p>Pour ne pas avoir à aller sur chaque site manuellement, j'utilise des outils qui regroupent les nouvelles à ma place :</p>
           <ul>
-            <li><strong>Outil utilisé :</strong> J'utilise <em>Feedly</em> pour centraliser mes lectures.</li>
-            <li><strong>Organisation :</strong> J'ai créé des dossiers pour trier les articles par thèmes automatiquement.</li>
-            <li><strong>Gain de temps :</strong> Je peux voir en un coup d'œil les 10 nouvelles informations les plus importantes du jour.</li>
+            <li>
+              <strong>Feedly (agrégateur RSS) :</strong> Je regroupe tous mes sites dans un seul endroit. J'ai créé 4 dossiers : <em>DLSS &amp; upscaling</em>, <em>Ray Tracing</em>, <em>GPU Hardware</em> et <em>IA dans les jeux</em>. Comme ça, je peux lire ce qui m'intéresse directement, sans perdre de temps à trier.
+            </li>
+            <li>
+              <strong>Alertes Google :</strong> J'ai mis des alertes sur des mots-clés comme "DLSS update" ou "NVIDIA driver". Je reçois un email automatiquement quand un article sur ces sujets est publié.
+            </li>
+            <li>
+              <strong>YouTube :</strong> Je suis les chaînes <em>Digital Foundry</em> et <em>NVIDIA GeForce</em> pour voir des vidéos comparatives. C'est plus facile pour comprendre les différences visuelles entre les modes DLSS.
+            </li>
           </ul>
           <div class="veille-divider"></div>
           <div class="proof-grid">
             <div class="proof-card">
-              <img src="images/mon_feedly.png" alt="Interface Feedly" onclick="openModal(this)">
-              <div class="proof-caption"><strong>Outil technique</strong>Mon interface Feedly avec mes flux RSS organisés.</div>
+              <img src="images/feedly_nvidia_gaming.png" alt="Youtube NVIDIA DLSS" onclick="openModal(this)">
+              <div class="proof-caption"><strong>Outil</strong> Observation de performance sur differente jeux .</div>
             </div>
           </div>
         </div>
@@ -241,19 +474,24 @@
       <div class="timeline-dot">💾</div>
       <div class="timeline-content">
         <div class="veille-card" style="margin-bottom: 0;">
-          <span class="veille-step">Étape 4</span>
-          <h3>Enregistrement et Partage des connaissances</h3>
-          <p>Une veille est inutile si on oublie tout le lendemain. Il faut stocker l'information et la partager avec les autres.</p>
+          <span class="veille-step">Étape 4 — Stockage &amp; Partage</span>
+          <h3>Sauvegarder et partager ce que j'apprends</h3>
+          <p>
+            Partager sa veille, c'est important. Ça prouve qu'on a vraiment compris le sujet, et ça aide les autres dans la communauté.
+          </p>
           <ul>
-            <li><strong>Stockage :</strong> J'utilise <em>Pocket</em> pour enregistrer les liens les plus intéressants pour les relire plus tard.</li>
-            <li><strong>Reformulation :</strong> Pour bien comprendre, j'essaie d'expliquer l'article avec mes propres phrases.</li>
-            <li><strong>Partage :</strong> Je communique mes découvertes sur Reddit pour aider la communauté informatique.</li>
+            <li>
+              <strong>Pocket :</strong> Je sauvegarde les articles importants avec des tags (#dlss, #rtx, #drivers) pour les retrouver facilement plus tard.
+            </li>
+            <li>
+              <strong>Résumés personnels :</strong> J'écris des courtes notes dans mes propres mots. Par exemple, j'ai fait une alerte concernant panne de driver NVIDIA de dernier version pour 5070<strong>
+            </li>
           </ul>
           <div class="veille-divider"></div>
           <div class="proof-grid">
             <div class="proof-card">
-              <img src="images/partage_linkedin.png" alt="Post de veille partagé" onclick="openModal(this)">
-              <div class="proof-caption"><strong>Communication</strong>Exemple d'un article que j'ai résumé et partagé.</div>
+              <img src="images/partage_dlss_synthese.png" alt="Synthèse partagée" onclick="openModal(this)">
+              <div class="proof-caption"><strong>Partage</strong> Exemple de alerte panne de driver.</div>
             </div>
           </div>
         </div>
@@ -265,29 +503,66 @@
       <div class="timeline-dot">🚀</div>
       <div class="timeline-content">
         <div class="veille-card" style="margin-bottom: 0;">
-          <span class="veille-step">Étape 5</span>
-          <h3>Mise en pratique (Tests réels)</h3>
-          <p>La veille doit finir par une mise en pratique pour tester ce qu'on a lu. L'auto-formation est une partie importante de mon apprentissage en BTS.</p>
+          <span class="veille-step">Étape 5 — Mise en pratique</span>
+          <h3>Tester par moi-même</h3>
+          <p>
+            Ce que j'apprends dans ma veille, je le teste directement. J'ai une <strong>RTX 5070</strong> dans mon PC personnel, ce qui me permet de tester toutes ces technologies chez moi.
+          </p>
           <ul>
-            <li><strong>Tests de code :</strong> J'ai utilisé des outils comme Claude pour m'aider à comprendre des algorithmes complexes.</li>
-            <li><strong>Comparaison :</strong> J'ai testé plusieurs IA pour voir laquelle écrit le meilleur code Java ou Python.</li>
+            <li>
+              <strong>Tests DLSS dans des jeux :</strong> J'ai comparé les modes DLSS (désactivé, Quality, Performance, Frame Generation) dans plusieurs jeux pour voir la différence de FPS et de qualité visuelle. Cela confirme ce que je lis dans les articles et me donne une expérience directe.
+            </li>
+            <li>
+              <strong>Plugin DLSS dans Unity :</strong> J'ai testé le plugin DLSS officiel pour Unity (disponible sur l'Asset Store). En quelques réglages, on peut activer le DLSS dans un projet Unity et voir les FPS augmenter sur les cartes RTX.
+            </li>
+            <li>
+              <strong>Ray tracing dans Unreal Engine 5 :</strong> J'ai activé les options ray tracing dans UE5 pour comprendre leur impact sur les performances — et faire le lien avec ce que j'avais lu sur les RT Cores des cartes NVIDIA.
+            </li>
           </ul>
+
+          <div class="veille-warning">
+            <strong>⚠️ Inconvénient découvert durant ma veille :</strong> Les derniers drivers NVIDIA ne sont pas toujours stables. Avec ma RTX 5070, le dernier driver disponible causait des <strong>kernel crashes</strong> (plantages complets du système, écran bleu). En cherchant sur r/nvidia et les forums Hardware.fr, j'ai trouvé que d'autres utilisateurs avaient le même problème. La solution : <strong>revenir à une version précédente des drivers</strong>, ce qui a rendu mon PC stable. Cela montre qu'une bonne veille inclut aussi le suivi des problèmes et des solutions — pas seulement les nouveautés positives.
+          </div>
+
           <div class="veille-divider"></div>
           <div class="proof-grid">
             <div class="proof-card">
-              <img src="images/test_pratique.png" alt="Test d'IA en pratique" onclick="openModal(this)">
-              <div class="proof-caption"><strong>Pratique</strong>Utilisation d'un outil découvert pendant ma veille.</div>
+              <img src="images/dlss_unity_test.png" alt="Test DLSS" onclick="openModal(this)">
+              <div class="proof-caption"><strong>Pratique</strong> Test du plugin DLSS dans un jeux avec ma RTX 5070.</div>
+            </div>
+            <div class="proof-card">
+              <img src="images/dlss_unity_test2.png" alt="Test DLSS" onclick="openModal(this)">
+              <div class="proof-caption"><strong>Pratique</strong> Test du plugin DLSS dans un jeux avec ma RTX 5070.</div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-  </div><!-- end timeline -->
+  </div>
+
+  <!-- CONCLUSION -->
+  <div class="section-header fade-in" style="margin-top: 2.5rem;">
+    <h2>Conclusion</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="veille-card fade-in">
+    <span class="veille-step">Bilan</span>
+    <h3>Ce que cette veille m'a apporté</h3>
+    <p>
+      Grâce à cette veille, j'ai appris que NVIDIA ne fait plus seulement des cartes graphiques : ils développent aussi des <strong>outils logiciels</strong> (DLSS SDK, plugins Unity/Unreal) que tout développeur peut utiliser dans ses projets.
+    </p>
+    <p>
+      La chose la plus intéressante que j'ai apprise : le GPU ne calcule plus forcément chaque pixel. Avec le DLSS, <strong>l'IA reconstruit l'image</strong> à partir d'une version moins détaillée — le résultat est proche du rendu natif, mais bien plus rapide. C'est un vrai changement dans la façon de développer des jeux.
+    </p>
+    <p>
+      Avoir une RTX 5070 m'a aussi montré la réalité du terrain : les nouvelles technologies peuvent avoir des bugs (comme les crashes kernel avec les derniers drivers). La veille m'a aidé à trouver la solution rapidement grâce à la communauté. Cela m'a appris qu'une bonne veille, c'est aussi savoir où chercher quand quelque chose ne fonctionne pas.
+    </p>
+  </div>
 
 </div>
 
-<!-- MODAL -->
 <div id="modal" class="modal" onclick="closeModal()">
   <img class="modal-img" id="modalImg">
   <button class="modal-close" onclick="event.stopPropagation();closeModal()">✕</button>
@@ -296,13 +571,27 @@
 <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <script>
-  function openModal(img) { document.getElementById('modal').style.display='block'; document.getElementById('modalImg').src=img.src; document.body.style.overflow='hidden'; }
-  function closeModal() { document.getElementById('modal').style.display='none'; document.body.style.overflow=''; }
-  document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
-  window.addEventListener('scroll', () => { document.getElementById('scrollTop').classList.toggle('show', window.scrollY > 400); });
+  function openModal(img) {
+    document.getElementById('modal').style.display = 'block';
+    document.getElementById('modalImg').src = img.src;
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.getElementById('modal').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  window.addEventListener('scroll', () => {
+    document.getElementById('scrollTop').classList.toggle('show', window.scrollY > 400);
+  });
   document.querySelectorAll('.fade-in').forEach((el, i) => {
     const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if(e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 60); obs.unobserve(e.target); } });
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 60);
+          obs.unobserve(e.target);
+        }
+      });
     }, { threshold: 0.06 });
     obs.observe(el);
   });
